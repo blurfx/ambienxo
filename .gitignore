@@ -35,6 +35,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# contentlayer cache
+.contentlayer/
+
 # ide and editors
 .idea/
 .vscode/

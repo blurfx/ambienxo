@@ -23,7 +23,9 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
+      "contentlayer/generated": ["./.contentlayer/generated"],
       "~/*": [
         "./src/*"
       ]
@@ -34,7 +36,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "/Users/xo/personal/ambienxo/.next/types/**/*.ts"
+    ".contentlayer/generated",
   ],
   "exclude": [
     "node_modules"

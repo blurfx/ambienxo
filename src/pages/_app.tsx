@@ -48,6 +48,10 @@ const Wrapper = styled('div', {
   maxWidth: '$contentWidth',
 });
 
+const Main = styled('main', {
+  paddingTop: '4rem',
+});
+
 export default function App({ Component, pageProps }: AppProps) {
   globalStyles();
   return (
@@ -76,7 +80,9 @@ export default function App({ Component, pageProps }: AppProps) {
             }}
           >
             <Header />
-            <Component {...pageProps} />
+            <Main>
+              <Component {...pageProps} />
+            </Main>
           </ThemeProvider>
         </Wrapper>
       </Container>

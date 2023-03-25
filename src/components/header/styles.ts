@@ -19,7 +19,7 @@ export const NavItemStyle = css({
   justifyContent: 'center',
   width: '$navItemSize',
   height: '$navItemSize',
-  borderRadius: '$navItem',
+  borderRadius: '$sm',
 
   '&:hover': {
     background:

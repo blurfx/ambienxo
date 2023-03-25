@@ -11,7 +11,7 @@ export const Header = () => {
         <Link href='/'>
           <HomeIcon />
         </Link>
-        <Link href='/articles'>
+        <Link href='/articles/articles'>
           <FileTextIcon />
         </Link>
         <Separator decorative orientation='vertical' />
