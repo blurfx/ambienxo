@@ -4,11 +4,15 @@ export const { getCssText, globalCss, styled, createTheme, css } =
     theme: {
       colors: {
         gray1: '#fff',
-        gray2: '#ececec',
-        gray3: '#bdbdbd',
-        gray5: '#71717a',
+        gray2: '#f1f1f1',
+        gray3: '#ececec',
+        gray4: '#bdbdbd',
+        gray5: '#949494',
+        gray6: '#71717a',
+        gray7: '#52525b',
+        gray8: '#383838',
         gray9: '#161616',
-        gray10: '#111511',
+        gray10: '#080808',
 
         blue1: '#c3c4cd',
 
@@ -23,9 +27,15 @@ export const { getCssText, globalCss, styled, createTheme, css } =
         cardGradient3: 'rgba(232, 98, 98, 0.1)',
 
         textPrimary: '$gray10',
-        textSecondary: '$gray5',
+        textSecondary: '$gray6',
+        textTertiary: '$gray5',
+
         bgColor: '$gray1',
         separator: '$blue1',
+        inlineCodeBg: '$gray3',
+        codeBlockBg: '$gray2',
+        tableBorder: '$gray4',
+        hr: '$gray4',
       },
       zIndices: {
         texture: 100,
@@ -35,6 +45,7 @@ export const { getCssText, globalCss, styled, createTheme, css } =
         navItemSize: '2.5rem',
       },
       radii: {
+        xs: '4px',
         sm: '6px',
       },
     },
@@ -43,13 +54,21 @@ export const { getCssText, globalCss, styled, createTheme, css } =
         paddingTop: value,
         paddingBottom: value,
       }),
+      my: (value: string | number) => ({
+        marginTop: value,
+        marginBottom: value,
+      }),
     },
   });
 
 export const darkTheme = createTheme('dark', {
   colors: {
-    textPrimary: '$gray2',
-    textSecondary: '$gray3',
+    textPrimary: '$gray3',
+    textSecondary: '$gray4',
+    textTertiary: '$gray5',
     bgColor: '$gray9',
+    inlineCodeBg: '$gray8',
+    codeBlockBg: '$gray10',
+    hr: '$gray7',
   },
 });

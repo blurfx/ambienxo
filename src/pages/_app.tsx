@@ -3,6 +3,7 @@ import { ThemeProvider } from 'next-themes';
 
 import { Header } from '~/components/header';
 import { darkTheme, globalCss, styled } from '~/stitches.config';
+import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
 
 const globalStyles = globalCss({
   '*': {
@@ -11,14 +12,35 @@ const globalStyles = globalCss({
     padding: 0,
 
     margin: 0,
+
+    '&:focus': {
+      outlineColor: '$primaryGradient2',
+    },
   },
   'html, body': {
     backgroundColor: '$bgColor',
+    fontFamily:
+      '"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif',
     color: '$textPrimary',
   },
   a: {
     color: 'inherit',
     textDecoration: 'none',
+  },
+  img: {
+    display: 'block',
+    margin: '0 auto',
+    maxWidth: '100%',
+  },
+  'pre[data-theme="dark"]': {
+    colorScheme: 'dark',
+  },
+
+  '.dark pre[data-theme="light"]': {
+    display: 'none',
+  },
+  '.light pre[data-theme="dark"]': {
+    display: 'none',
   },
   '@media (prefers-color-scheme: dark)': {
     html: {
@@ -49,7 +71,7 @@ const Wrapper = styled('div', {
 });
 
 const Main = styled('main', {
-  paddingTop: '4rem',
+  paddingTop: '2rem',
 });
 
 export default function App({ Component, pageProps }: AppProps) {
