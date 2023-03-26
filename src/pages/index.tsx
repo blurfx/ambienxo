@@ -1,11 +1,12 @@
 import { InferGetStaticPropsType } from 'next';
 
-import { allPosts, allMDXPosts } from 'contentlayer/generated';
 import Card from '~/components/card';
 import CardContainer from '~/components/card-container';
 import Content from '~/components/content';
 import Section from '~/components/section';
 import SectionList from '~/components/section-list';
+import generateRssFeed from '~/utils/generateRssFeed';
+import { getSortedPosts } from '~/utils/post';
 
 const HomePage = ({
   posts,
@@ -67,11 +68,9 @@ const HomePage = ({
 
 export default HomePage;
 
-export const getStaticProps = () => {
-  const posts = [...allPosts, ...allMDXPosts]
-    .sort((a, b) => {
-      return new Date(b.date).getTime() - new Date(a.date).getTime();
-    })
+export const getStaticProps = async () => {
+  await generateRssFeed();
+  const posts = getSortedPosts()
     .slice(0, 3)
     .map((post) => ({
       title: post.title,

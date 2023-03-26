@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "lint-staged": "lint-staged",
@@ -39,8 +39,10 @@
     "@typescript-eslint/parser": "^5.54.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "feed": "^4.2.2",
     "husky": "^8.0.0",
     "lint-staged": "^13.1.2",
+    "next-sitemap": "^4.0.6",
     "prettier": "^2.8.4"
   }
 }

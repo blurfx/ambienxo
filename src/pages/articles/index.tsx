@@ -1,9 +1,9 @@
 import type { InferGetStaticPropsType } from 'next';
 
-import { allMDXPosts, allPosts } from 'contentlayer/generated';
 import Card from '~/components/card';
 import CardContainer from '~/components/card-container';
 import Section from '~/components/section';
+import { getSortedPosts } from '~/utils/post';
 
 const ArticlesPage = ({
   posts,
@@ -28,15 +28,11 @@ const ArticlesPage = ({
 export default ArticlesPage;
 
 export const getStaticProps = () => {
-  const posts = [...allPosts, ...allMDXPosts]
-    .sort((a, b) => {
-      return new Date(b.date).getTime() - new Date(a.date).getTime();
-    })
-    .map((post) => ({
-      title: post.title,
-      description: post.description ?? null,
-      date: post.date,
-      url: post.url,
-    }));
+  const posts = getSortedPosts().map((post) => ({
+    title: post.title,
+    description: post.description ?? null,
+    date: post.date,
+    url: post.url,
+  }));
   return { props: { posts } };
 };

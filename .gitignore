@@ -41,3 +41,8 @@ next-env.d.ts
 # ide and editors
 .idea/
 .vscode/
+
+public/atom.xml
+public/feed.*
+public/sitemap*.xml
+public/robots.txt
