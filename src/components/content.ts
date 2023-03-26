@@ -15,23 +15,25 @@ export const Content = styled('div', {
     },
   },
   h1: {
-    fontSize: '1.125rem',
     marginBottom: '0.75rem',
+
+    fontSize: '1.125rem',
+    fontWeight: '600',
     '&:not(:first-child)': {
       marginTop: '1.75rem',
     },
   },
   'h2, h3, h4, h5, h6': {
-    fontSize: '1rem',
     marginBottom: '0.5rem',
+
+    fontSize: '1rem',
+    fontWeight: 500,
     '&:not(:first-child)': {
       marginTop: '1.5rem',
     },
   },
   ':is(h3, h4, h5, h6):not(:first-child)': {
-    '&:not(:first-child)': {
-      marginTop: '1.25rem',
-    },
+    marginTop: '1.25rem',
   },
   'pre, code': {
     fontSize: '1rem',
