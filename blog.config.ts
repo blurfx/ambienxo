@@ -23,7 +23,7 @@ export const BlogConfig: BlogConfigOptions = {
   name: 'xo',
   title: 'Ambienxo',
   description: 'Ambienxo, Next.js Theme for minimalists.',
-  url: 'http://localhost:3000',
+  url: 'https://ambienxo.vercel.app',
   comment: {
     type: 'giscus',
     repo: 'blurfx/ambienxo',

@@ -83,6 +83,7 @@ const Container = styled('div', {
 const Wrapper = styled('div', {
   margin: '0 auto',
   py: '1rem',
+  width: '100%',
   maxWidth: '$contentWidth',
 });
 
