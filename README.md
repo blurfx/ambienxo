@@ -18,12 +18,12 @@ Ambienxo is a modern personal blog theme for minimalists built on top of [Next.j
 
 ## Getting Started
 
-First, set your name and the desired blog title, description, and url (without the trailing slash) in `blog.config.ts`. The name will appear in the RSS feed and footer.
+Before using this theme, there are a few things you need to set up:
 
-And in `next-sitemap.config.js`, write your blog url (it should be the same as the `url` in `blog.config.ts`).
-
-Finally, modify `pages/index.tsx` to your own liking.
-
+1. Edit the name, title, description and url in `blog.config.ts` (url without the trailing slash).
+2. if you want to use giscus or utterances comments on your blog, change `comment` in `blog.config.ts`. If you don't want to use comments, set `comment` to `null`.
+3. In `next-sitemap.config.js`, change `siteUrl` to be the same as in `blog.config.ts`.
+4. change your blog's main page `pages/index.tsx` to your favour.
 
 ## Local Development
 
