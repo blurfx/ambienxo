@@ -8,7 +8,7 @@ import { allPosts, Post } from 'contentlayer/generated';
 import { ArticleHeader } from '~/components/article/header';
 import Giscus from '~/components/comment/giscus';
 import Utterances from '~/components/comment/utterances';
-import { Content } from '~/components/content';
+import Content from '~/components/content';
 
 type Props = {
   post: Post;

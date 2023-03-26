@@ -1,6 +1,6 @@
 import { styled } from '~/stitches.config';
 
-export const CardContainer = styled('div', {
+const CardContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   gap: '1rem',
@@ -17,3 +17,5 @@ export const CardContainer = styled('div', {
     },
   },
 });
+
+export default CardContainer;

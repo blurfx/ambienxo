@@ -1,11 +1,6 @@
 import { styled } from '~/stitches.config';
 
-export const SectionList = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '2rem',
-});
-export const Content = styled('div', {
+const Content = styled('div', {
   wordBreak: 'keep-all',
   a: {
     textDecorationColor: '$textSecondary',
@@ -104,3 +99,5 @@ export const Content = styled('div', {
     backgroundColor: '$inlineCodeBg',
   },
 });
+
+export default Content;

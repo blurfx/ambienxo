@@ -2,9 +2,10 @@ import { InferGetStaticPropsType } from 'next';
 
 import { allPosts } from 'contentlayer/generated';
 import Card from '~/components/card';
-import { CardContainer } from '~/components/card-container';
-import { Content, SectionList } from '~/components/content';
+import CardContainer from '~/components/card-container';
+import Content from '~/components/content';
 import Section from '~/components/section';
+import SectionList from '~/components/section-list';
 
 const HomePage = ({
   posts,

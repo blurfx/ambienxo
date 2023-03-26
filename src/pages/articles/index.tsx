@@ -2,7 +2,7 @@ import type { InferGetStaticPropsType } from 'next';
 
 import { allPosts } from 'contentlayer/generated';
 import Card from '~/components/card';
-import { CardContainer } from '~/components/card-container';
+import CardContainer from '~/components/card-container';
 import Section from '~/components/section';
 
 const ArticlesPage = ({
