@@ -1,5 +1,5 @@
 import { NextSeoProps } from 'next-seo';
-const SEOConfig: NextSeoProps = {
+export const SEOConfig: NextSeoProps = {
   title: 'Blog Title',
   description: 'Blog Description',
   canonical: 'https://example.com',
@@ -14,5 +14,3 @@ const SEOConfig: NextSeoProps = {
     ],
   },
 };
-
-export default SEOConfig;

@@ -1,7 +1,9 @@
 import { ParsedUrlQuery } from 'querystring';
 
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
+import { NextSeo } from 'next-seo';
 
+import { SEOConfig } from '../../../blog.config';
 import { allPosts, Post } from 'contentlayer/generated';
 import { ArticleHeader } from '~/components/article/header';
 import { Content } from '~/components/content';
@@ -19,6 +21,11 @@ const ArticlePage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
+      <NextSeo
+        title={post.title}
+        description={post.description}
+        canonical={`${SEOConfig.canonical}${post.url}`}
+      />
       <ArticleHeader title={post.title} date={post.date} />
       <Content dangerouslySetInnerHTML={{ __html: post.body.html }} />
     </>

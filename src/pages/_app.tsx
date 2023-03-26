@@ -2,7 +2,7 @@ import { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
 
-import SEOConfig from 'seo.config';
+import { SEOConfig } from 'blog.config';
 import { Header } from '~/components/header';
 import { darkTheme, globalCss, styled } from '~/stitches.config';
 
