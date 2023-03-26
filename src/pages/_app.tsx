@@ -1,8 +1,11 @@
 import { AppProps } from 'next/app';
+import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
 
+import SEOConfig from 'seo.config';
 import { Header } from '~/components/header';
 import { darkTheme, globalCss, styled } from '~/stitches.config';
+
 import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
 
 const globalStyles = globalCss({
@@ -78,6 +81,7 @@ export default function App({ Component, pageProps }: AppProps) {
   globalStyles();
   return (
     <>
+      <DefaultSeo {...SEOConfig} />
       <NoiseTexture>
         <filter id='noise'>
           <feTurbulence

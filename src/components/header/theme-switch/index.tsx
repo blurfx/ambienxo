@@ -21,7 +21,11 @@ const ThemeSwitch = () => {
   const toggleTheme = () => setTheme(isDark ? 'light' : 'dark');
 
   return (
-    <Container aria-pressed={isDark} onClick={toggleTheme}>
+    <Container
+      aria-pressed={isDark}
+      aria-label={'Theme switcher'}
+      onClick={toggleTheme}
+    >
       <Icon />
     </Container>
   );

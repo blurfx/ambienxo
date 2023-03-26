@@ -27,8 +27,8 @@ export const { getCssText, globalCss, styled, createTheme, css } =
         cardGradient3: 'rgba(232, 98, 98, 0.1)',
 
         textPrimary: '$gray10',
-        textSecondary: '$gray6',
-        textTertiary: '$gray5',
+        textSecondary: '$gray7',
+        textTertiary: '$gray6',
 
         bgColor: '$gray1',
         separator: '$blue1',
