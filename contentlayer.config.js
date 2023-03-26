@@ -2,9 +2,7 @@ import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 import rehypePrettyCode from 'rehype-pretty-code';
 import remarkGfm from 'remark-gfm';
 
-export const Post = defineDocumentType(() => ({
-  name: 'Post',
-  filePathPattern: '**/*.md',
+const postFields = {
   fields: {
     title: {
       type: 'string',
@@ -36,6 +34,19 @@ export const Post = defineDocumentType(() => ({
       resolve: (post) => `/articles/${post._raw.flattenedPath}`,
     },
   },
+};
+
+export const Post = defineDocumentType(() => ({
+  name: 'Post',
+  filePathPattern: '**/*.md',
+  ...postFields,
+}));
+
+export const MDXPost = defineDocumentType(() => ({
+  name: 'MDXPost',
+  filePathPattern: '**/*.mdx',
+  contentType: 'mdx',
+  ...postFields,
 }));
 
 const rehypePrettyCodeOptions = {
@@ -47,8 +58,12 @@ const rehypePrettyCodeOptions = {
 
 export default makeSource({
   contentDirPath: 'posts',
-  documentTypes: [Post],
+  documentTypes: [MDXPost, Post],
   markdown: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions]],
+  },
+  mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions]],
   },

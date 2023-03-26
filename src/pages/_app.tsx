@@ -3,6 +3,7 @@ import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
 
 import { SEOConfig } from 'blog.config';
+import GoogleAnalytics from '~/components/google-analytics';
 import { Header } from '~/components/header';
 import { darkTheme, globalCss, styled } from '~/stitches.config';
 
@@ -129,6 +130,7 @@ export default function App({ Component, pageProps }: AppProps) {
           </Wrapper>
         </ThemeProvider>
       </Container>
+      <GoogleAnalytics />
     </>
   );
 }

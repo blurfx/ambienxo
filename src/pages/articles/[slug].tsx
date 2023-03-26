@@ -4,14 +4,15 @@ import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { NextSeo } from 'next-seo';
 
 import { BlogConfig, SEOConfig } from '../../../blog.config';
-import { allPosts, Post } from 'contentlayer/generated';
+import { allMDXPosts, allPosts, MDXPost, Post } from 'contentlayer/generated';
 import { ArticleHeader } from '~/components/article/header';
 import Giscus from '~/components/comment/giscus';
 import Utterances from '~/components/comment/utterances';
 import Content from '~/components/content';
+import MDXContent from '~/components/MDXContent';
 
 type Props = {
-  post: Post;
+  post: Post | MDXPost;
 };
 
 type Params = ParsedUrlQuery & {
@@ -21,6 +22,7 @@ type Params = ParsedUrlQuery & {
 const ArticlePage = ({
   post,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  // @ts-ignore
   return (
     <div>
       <NextSeo
@@ -36,7 +38,11 @@ const ArticlePage = ({
         }}
       />
       <ArticleHeader title={post.title} date={post.date} />
-      <Content dangerouslySetInnerHTML={{ __html: post.body.html }} />
+      {'code' in post.body ? (
+        <MDXContent code={post.body.code} />
+      ) : (
+        <Content dangerouslySetInnerHTML={{ __html: post.body.html }} />
+      )}
       {BlogConfig.comment?.type === 'giscus' && <Giscus />}
       {BlogConfig.comment?.type === 'utterances' && <Utterances />}
     </div>
@@ -44,7 +50,7 @@ const ArticlePage = ({
 };
 
 export const getStaticPaths: GetStaticPaths<Params> = () => {
-  const paths = allPosts.map((post) => post.url);
+  const paths = [...allPosts, ...allMDXPosts].map((post) => post.url);
   return {
     paths,
     fallback: false,
@@ -52,7 +58,9 @@ export const getStaticPaths: GetStaticPaths<Params> = () => {
 };
 
 export const getStaticProps: GetStaticProps<Props, Params> = ({ params }) => {
-  const post = allPosts.find((p) => p._raw.flattenedPath === params?.slug)!;
+  const post = [...allPosts, ...allMDXPosts].find(
+    (p) => p._raw.flattenedPath === params?.slug,
+  )!;
   return {
     props: {
       post,

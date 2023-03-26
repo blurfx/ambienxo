@@ -1,6 +1,6 @@
 import { InferGetStaticPropsType } from 'next';
 
-import { allPosts } from 'contentlayer/generated';
+import { allPosts, allMDXPosts } from 'contentlayer/generated';
 import Card from '~/components/card';
 import CardContainer from '~/components/card-container';
 import Content from '~/components/content';
@@ -68,7 +68,7 @@ const HomePage = ({
 export default HomePage;
 
 export const getStaticProps = () => {
-  const posts = allPosts
+  const posts = [...allPosts, ...allMDXPosts]
     .sort((a, b) => {
       return new Date(b.date).getTime() - new Date(a.date).getTime();
     })

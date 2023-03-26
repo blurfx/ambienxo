@@ -16,6 +16,7 @@ type BlogConfigOptions = {
         lazy?: boolean;
       }
     | null;
+  googleAnalyticsId?: string; // gtag id
 };
 export const BlogConfig: BlogConfigOptions = {
   title: 'Ambienxo',
