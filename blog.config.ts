@@ -1,6 +1,7 @@
 import { NextSeoProps } from 'next-seo';
 
 type BlogConfigOptions = {
+  name: string; // used for footer and RSS feed
   title: string;
   description: string;
   url: string;
@@ -19,6 +20,7 @@ type BlogConfigOptions = {
   googleAnalyticsId?: string; // gtag id
 };
 export const BlogConfig: BlogConfigOptions = {
+  name: 'xo',
   title: 'Ambienxo',
   description: 'Ambienxo, Next.js Theme for minimalists.',
   url: 'http://localhost:3000',

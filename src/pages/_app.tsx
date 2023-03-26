@@ -3,6 +3,7 @@ import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
 
 import { SEOConfig } from 'blog.config';
+import Footer from '~/components/footer';
 import GoogleAnalytics from '~/components/google-analytics';
 import { Header } from '~/components/header';
 import { darkTheme, globalCss, styled } from '~/stitches.config';
@@ -74,6 +75,8 @@ const HeaderContainer = styled('header', {
 });
 
 const Container = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
   minHeight: '100vh',
 });
 
@@ -128,6 +131,7 @@ export default function App({ Component, pageProps }: AppProps) {
               <Component {...pageProps} />
             </Main>
           </Wrapper>
+          <Footer />
         </ThemeProvider>
       </Container>
       <GoogleAnalytics />
