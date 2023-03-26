@@ -13,10 +13,8 @@ import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
 const globalStyles = globalCss({
   '*': {
     boxSizing: 'border-box',
-
-    padding: 0,
-
     margin: 0,
+    padding: 0,
 
     '&:focus': {
       outlineColor: '$primaryGradient2',
@@ -40,7 +38,6 @@ const globalStyles = globalCss({
   'pre[data-theme="dark"]': {
     colorScheme: 'dark',
   },
-
   '.dark pre[data-theme="light"]': {
     display: 'none',
   },
@@ -58,16 +55,19 @@ const NoiseTexture = styled('svg', {
   position: 'fixed',
   top: 0,
   left: 0,
+  zIndex: '$texture',
+
   width: '100%',
   height: '120vh',
+
   opacity: '0.2',
-  zIndex: '$texture',
   pointerEvents: 'none',
 });
 
 const HeaderContainer = styled('header', {
   position: 'sticky',
   top: 0,
+
   width: '100%',
 
   backgroundColor: '$headerContainerBg',
