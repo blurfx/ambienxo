@@ -14,8 +14,8 @@ Ambienxo is a modern personal blog theme for minimalists built on top of [Next.j
 - Markdown and MDX support
 - [utterances](https://utteranc.es/) or [giscus](https://giscus.app/) integration
 - [Google Analytics](https://analytics.google.com) integration
-- RSS feed
-
+- RSS feed(xml, json, atom) and Sitemap
+ 
 ## Getting Started
 
 Before using this theme, there are a few things you need to set up:
