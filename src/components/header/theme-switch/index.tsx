@@ -2,7 +2,9 @@ import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
-import { Container } from './styles';
+import Tooltip from '~/components/header/tooltip';
+
+import { Button, Container } from './styles';
 
 const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false);
@@ -21,12 +23,16 @@ const ThemeSwitch = () => {
   const toggleTheme = () => setTheme(isDark ? 'light' : 'dark');
 
   return (
-    <Container
-      aria-pressed={isDark}
-      aria-label={'Theme switcher'}
-      onClick={toggleTheme}
-    >
-      <Icon />
+    <Container>
+      <Tooltip label={isDark ? 'Dark Theme' : 'Light Theme'}>
+        <Button
+          aria-pressed={isDark}
+          aria-label={'Theme switcher'}
+          onClick={toggleTheme}
+        >
+          <Icon />
+        </Button>
+      </Tooltip>
     </Container>
   );
 };

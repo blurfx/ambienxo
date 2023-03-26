@@ -1,5 +1,5 @@
 import { createStitches } from '@stitches/react';
-export const { getCssText, globalCss, styled, createTheme, css } =
+export const { getCssText, globalCss, styled, createTheme, css, keyframes } =
   createStitches({
     theme: {
       colors: {
@@ -38,6 +38,8 @@ export const { getCssText, globalCss, styled, createTheme, css } =
         tableBorder: '$gray4',
         blockquoteBorder: '$gray6',
         hr: '$gray4',
+        tooltipColor: '$primaryGradient2',
+        tooltipBg: '$gray1',
       },
       zIndices: {
         texture: 100,
@@ -84,5 +86,7 @@ export const darkTheme = createTheme('dark', {
     codeBlockBg: '$gray10',
     hr: '$gray7',
     blockquoteBorder: '$gray5',
+    tooltipColor: '$secondaryGradient3',
+    tooltipBg: '$gray10',
   },
 });

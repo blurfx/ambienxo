@@ -14,6 +14,11 @@ export const Nav = styled('nav', {
   display: 'flex',
   alignItems: 'center',
   gap: '0.5rem',
+  'button[data-state]': {
+    border: 0,
+    padding: 0,
+    background: 'transparent',
+  },
 });
 
 export const NavItemStyle = css({
