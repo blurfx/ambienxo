@@ -25,6 +25,10 @@ export const Post = defineDocumentType(() => ({
       type: 'string',
       description: 'The description of the post for preview and SEO',
     },
+    thumbnail: {
+      type: 'string',
+      description: 'The thumbnail image file path of the post for SEO',
+    },
   },
   computedFields: {
     url: {

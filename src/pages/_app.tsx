@@ -25,7 +25,6 @@ const globalStyles = globalCss({
     fontFamily:
       '"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif',
     color: '$textPrimary',
-    overflow: 'hidden',
   },
   a: {
     color: 'inherit',
@@ -71,16 +70,10 @@ const HeaderContainer = styled('header', {
 
   backgroundColor: '$headerContainerBg',
   backdropFilter: 'blur(8px)',
-
-  zIndex: 1,
 });
 
 const Container = styled('div', {
-  height: '100vh',
-  overflowY: 'overlay',
-  '@sm': {
-    px: '1rem',
-  },
+  minHeight: '100vh',
 });
 
 const Wrapper = styled('div', {
@@ -91,6 +84,10 @@ const Wrapper = styled('div', {
 
 const Main = styled('main', {
   paddingTop: '2rem',
+
+  '@sm': {
+    px: '1rem',
+  },
 });
 
 export default function App({ Component, pageProps }: AppProps) {

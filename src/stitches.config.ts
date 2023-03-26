@@ -36,6 +36,7 @@ export const { getCssText, globalCss, styled, createTheme, css } =
         inlineCodeBg: '$gray3',
         codeBlockBg: '$gray2',
         tableBorder: '$gray4',
+        blockquoteBorder: '$gray6',
         hr: '$gray4',
       },
       zIndices: {
@@ -82,5 +83,6 @@ export const darkTheme = createTheme('dark', {
     inlineCodeBg: '$gray8',
     codeBlockBg: '$gray10',
     hr: '$gray7',
+    blockquoteBorder: '$gray5',
   },
 });

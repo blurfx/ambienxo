@@ -14,6 +14,10 @@ export const Content = styled('div', {
       textDecorationThickness: '2px',
     },
   },
+  blockquote: {
+    borderLeft: '2px solid $blockquoteBorder',
+    paddingLeft: '1rem',
+  },
   h1: {
     marginBottom: '0.75rem',
 
