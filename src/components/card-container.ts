@@ -9,6 +9,10 @@ export const CardContainer = styled('div', {
     direction: {
       row: {
         flexDirection: 'row',
+
+        '@sm': {
+          flexDirection: 'column',
+        },
       },
     },
   },

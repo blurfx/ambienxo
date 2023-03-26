@@ -2,8 +2,7 @@ import { Root as SeparatorRoot } from '@radix-ui/react-separator';
 
 import { css, styled } from '~/stitches.config';
 
-export const Container = styled('header', {
-  position: 'sticky',
+export const Container = styled('div', {
   width: '100%',
 });
 

@@ -31,6 +31,7 @@ export const { getCssText, globalCss, styled, createTheme, css } =
         textTertiary: '$gray6',
 
         bgColor: '$gray1',
+        headerContainerBg: 'rgba(255, 255, 255, 0.6)',
         separator: '$blue1',
         inlineCodeBg: '$gray3',
         codeBlockBg: '$gray2',
@@ -49,10 +50,20 @@ export const { getCssText, globalCss, styled, createTheme, css } =
         sm: '6px',
       },
     },
+    media: {
+      sm: '(max-width: 767.98px)',
+      md: '(max-width: 991.98px)',
+      lg: '(max-width: 1199.98px)',
+      xl: '(max-width: 1399.98px)',
+    },
     utils: {
       py: (value: string | number) => ({
         paddingTop: value,
         paddingBottom: value,
+      }),
+      px: (value: string | number) => ({
+        paddingLeft: value,
+        paddingRight: value,
       }),
       my: (value: string | number) => ({
         marginTop: value,
@@ -67,6 +78,7 @@ export const darkTheme = createTheme('dark', {
     textSecondary: '$gray4',
     textTertiary: '$gray5',
     bgColor: '$gray9',
+    headerContainerBg: 'rgba(22,22,22, 0.6)',
     inlineCodeBg: '$gray8',
     codeBlockBg: '$gray10',
     hr: '$gray7',
