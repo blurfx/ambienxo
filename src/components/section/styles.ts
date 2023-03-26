@@ -6,5 +6,5 @@ export const Container = styled('section', {
 
 export const Title = styled('h1', {
   fontSize: '1.25rem',
-  marginBottom: '1rem',
+  marginBottom: '2.5rem',
 });

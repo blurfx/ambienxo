@@ -1,25 +1,26 @@
 import type { InferGetStaticPropsType } from 'next';
 
 import { allPosts } from 'contentlayer/generated';
-import ArticleCard from '~/components/article/card';
+import Card from '~/components/card';
+import { CardContainer } from '~/components/card-container';
 import Section from '~/components/section';
-import { styled } from '~/stitches.config';
 
-export const Container = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '1rem',
-});
 const ArticlesPage = ({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Section title={'Articles'}>
-      <Container>
+      <CardContainer>
         {posts.map((post) => (
-          <ArticleCard key={post.url} post={post} />
+          <Card
+            key={post.url}
+            title={post.title}
+            description={post.description}
+            date={post.date}
+            url={post.url}
+          />
         ))}
-      </Container>
+      </CardContainer>
     </Section>
   );
 };
@@ -34,6 +35,7 @@ export const getStaticProps = () => {
     .map((post) => ({
       title: post.title,
       description: post.description ?? null,
+      date: post.date,
       url: post.url,
     }));
   return { props: { posts } };

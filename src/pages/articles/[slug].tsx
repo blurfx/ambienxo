@@ -3,8 +3,8 @@ import { ParsedUrlQuery } from 'querystring';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 
 import { allPosts, Post } from 'contentlayer/generated';
-import { ArticleContent } from '~/components/article/content';
 import { ArticleHeader } from '~/components/article/header';
+import { Content } from '~/components/content';
 
 type Props = {
   post: Post;
@@ -20,7 +20,7 @@ const ArticlePage = ({
   return (
     <>
       <ArticleHeader title={post.title} date={post.date} />
-      <ArticleContent dangerouslySetInnerHTML={{ __html: post.body.html }} />
+      <Content dangerouslySetInnerHTML={{ __html: post.body.html }} />
     </>
   );
 };

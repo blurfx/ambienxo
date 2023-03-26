@@ -53,7 +53,10 @@
     "keyword-spacing": "error",
     "quotes": [
       "error",
-      "single"
+      "single",
+      {
+        "avoidEscape": true
+      }
     ],
     "react/jsx-filename-extension": [
       "warn",
