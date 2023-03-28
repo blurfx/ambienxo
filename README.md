@@ -12,7 +12,7 @@ Ambienxo is a modern personal blog theme for minimalists built on top of [Next.j
 - Dark mode
 - Syntax highlighting
 - Markdown and MDX support
-- [utterances](https://utteranc.es/) or [giscus](https://giscus.app/) integration
+- [utterances](https://utteranc.es/) and [giscus](https://giscus.app/) integration
 - [Google Analytics](https://analytics.google.com) integration
 - RSS feed(xml, json, atom) and Sitemap
  

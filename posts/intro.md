@@ -20,6 +20,6 @@ You can use this theme to create your own personal blog, or you can use it as a 
 - Dark mode
 - Syntax highlighting
 - Markdown and MDX support
-- [utterances](https://utteranc.es/) or [giscus](https://giscus.app/) integration
+- [utterances](https://utteranc.es/) and [giscus](https://giscus.app/) integration
 - [Google Analytics](https://analytics.google.com) integration
 - RSS feed(xml, json, atom) and Sitemap

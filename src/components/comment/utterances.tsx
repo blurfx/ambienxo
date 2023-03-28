@@ -6,19 +6,25 @@ import { BlogConfig } from '../../../blog.config';
 const src = 'https://utteranc.es/client.js';
 const branch = 'master';
 
+const sendMessage = (message: Record<string, unknown>) => {
+  const iframe: HTMLIFrameElement | null = document.querySelector(
+    'iframe.utterances-frame',
+  );
+  iframe?.contentWindow?.postMessage(message, 'https://utteranc.es');
+};
+
 const Utterances = () => {
   const ref = createRef<HTMLDivElement>();
   const { resolvedTheme } = useTheme();
-  const isDark = resolvedTheme === 'dark';
-  const utteranceTheme = isDark ? 'github-dark' : 'github-light';
+  const theme = resolvedTheme === 'light' ? 'github-light' : 'github-dark';
 
   useEffect(() => {
     const script = document.createElement('script');
     const config = {
       src,
       branch,
+      theme,
       repo: BlogConfig.comment?.repo,
-      theme: utteranceTheme,
       label: 'comment',
       async: true,
       crossorigin: 'anonymous',
@@ -41,6 +47,13 @@ const Utterances = () => {
       });
     };
   }, []);
+
+  useEffect(() => {
+    sendMessage({
+      type: 'set-theme',
+      theme,
+    });
+  }, [theme]);
 
   if (BlogConfig.comment?.type !== 'utterances') {
     return null;
