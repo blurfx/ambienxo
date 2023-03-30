@@ -12,6 +12,7 @@ export default function generateRssFeed() {
     id: blogUrl,
     title: BlogConfig.title,
     description: BlogConfig.description,
+    link: BlogConfig.url,
     feedLinks: {
       rss2: `${blogUrl}/feed.xml`,
       json: `${blogUrl}/feed.json`,
