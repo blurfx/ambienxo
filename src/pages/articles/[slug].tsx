@@ -10,6 +10,7 @@ import Giscus from '~/components/comment/giscus';
 import Utterances from '~/components/comment/utterances';
 import Content from '~/components/content';
 import MDXContent from '~/components/MDXContent';
+import { styled } from '~/stitches.config';
 
 type Props = {
   post: Post | MDXPost;
@@ -18,6 +19,10 @@ type Props = {
 type Params = ParsedUrlQuery & {
   slug: string;
 };
+
+const Article = styled('article', {
+  marginBottom: '2rem',
+});
 
 const ArticlePage = ({
   post,
@@ -37,12 +42,14 @@ const ArticlePage = ({
             : undefined,
         }}
       />
-      <ArticleHeader title={post.title} date={post.date} />
-      {'code' in post.body ? (
-        <MDXContent code={post.body.code} />
-      ) : (
-        <Content dangerouslySetInnerHTML={{ __html: post.body.html }} />
-      )}
+      <Article>
+        <ArticleHeader title={post.title} date={post.date} />
+        {'code' in post.body ? (
+          <MDXContent code={post.body.code} />
+        ) : (
+          <Content dangerouslySetInnerHTML={{ __html: post.body.html }} />
+        )}
+      </Article>
       {BlogConfig.comment?.type === 'giscus' && <Giscus />}
       {BlogConfig.comment?.type === 'utterances' && <Utterances />}
     </div>

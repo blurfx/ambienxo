@@ -1,7 +1,8 @@
 import Link from 'next/link';
 
 import { BlogConfig } from 'blog.config';
-import { Container } from '~/components/footer/styles';
+
+import { Container } from './styles';
 
 const Footer = () => {
   return (
