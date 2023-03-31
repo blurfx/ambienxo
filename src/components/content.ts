@@ -16,7 +16,7 @@ const Content = styled('div', {
   h1: {
     marginBottom: '0.75rem',
 
-    fontSize: '1.125rem',
+    fontSize: '1.25rem',
     fontWeight: '600',
     '&:not(:first-child)': {
       marginTop: '1.75rem',
@@ -24,8 +24,10 @@ const Content = styled('div', {
   },
   'h2, h3, h4, h5, h6': {
     marginBottom: '0.5rem',
-
     fontSize: '1rem',
+    '&:is(h2)': {
+      fontSize: '1.125rem',
+    },
     fontWeight: 500,
     '&:not(:first-child)': {
       marginTop: '1.5rem',
