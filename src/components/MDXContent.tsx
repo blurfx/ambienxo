@@ -1,4 +1,4 @@
-import { useMDXComponent } from 'next-contentlayer/hooks';
+import { useMDXComponent } from 'next-contentlayer2/hooks';
 
 import Content from '~/components/content';
 import Youtube from '~/components/embed/youtube';
@@ -16,6 +16,7 @@ const MDXContent = ({ code }: Props) => {
 
   return (
     <Content>
+      {/* eslint-disable-next-line react-hooks/static-components */}
       <MDX components={MDXComponents} />
     </Content>
   );

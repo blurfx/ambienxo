@@ -9,7 +9,7 @@ type Props = React.PropsWithChildren<{
 const Section = ({ title, level = 1, children }: Props) => {
   return (
     <Container>
-      <Title as={`h${level}`}>{title}</Title>
+      <Title as={`h${level}` as 'h1'}>{title}</Title>
       {children}
     </Container>
   );
